@@ -16,7 +16,24 @@ The project is implemented in three phases:
 - **Splits**: Train, validation, and test (test used strictly for final evaluation).
 
 ---
+## Exploratory Data Analysis
 
+1. **Data Integrity**  
+   - Minimal redundancy: no overlaps between train and validation sets; only one duplicate in the test set.
+   
+2. **Label Distribution**  
+   - Labels are highly imbalanced. The majority of examples belong to "No claim," which makes up ~⅔ of all data points.
+   - This imbalance may bias models toward predicting the dominant class.
+
+3. **Feature Characteristics**  
+   - Text lengths vary significantly between samples, which may affect sequence models like LSTMs but less so large language models (LLMs).
+   - Word count distribution shows a similar pattern to text length, confirming varied verbosity across examples.
+
+4. **Implications for Modeling**  
+   - Class imbalance requires careful consideration in evaluation.
+   - Simple surface-level text features (e.g., TF-IDF) may already capture discriminative patterns given the specialized domain.
+
+---
 ## Environment Setup
 
 ```bash
