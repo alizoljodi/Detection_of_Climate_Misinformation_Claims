@@ -93,13 +93,19 @@ The results show a clear gap between naive prompting and methods adapted to the 
 - Fully connected networks effectively learned non-linear decision boundaries from these features.
 
 **Next Steps**:
-- Experiment with hybrid methods (e.g., TF-IDF features + LLM embeddings).
 - Use domain-adapted LLMs pre-trained on climate change discussions.
 - Explore more advanced retrieval pipelines.
 
 ---
 
 ## Metrics
+
+For this project, **accuracy** is used as the main comparison metric.  
+The reason for this choice is its **simplicity** and ease of interpretation.  
+Since this is a **multi-class classification** task, accuracy provides a straightforward  
+yet effective way to compare models based on their overall detection performance.  
+It also offers a quick summary of how well the model performs across all categories,  
+making it useful for initial benchmarking before diving into more detailed metrics.
 
 **Accuracy**  
 Accuracy = Correct Predictions / Total Predictions
@@ -112,6 +118,11 @@ Recall = True Positives / (True Positives + False Negatives)
 
 **F1-Score**  
 F1 = 2 × (Precision × Recall) / (Precision + Recall)
+
+While precision, recall, and F1-score are also reported to capture the nuances of  
+per-class performance and class imbalance effects, the primary focus remains on  
+accuracy for clear model-to-model comparison.
+
 
 ---
 
