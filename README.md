@@ -20,8 +20,8 @@ The project is implemented in three phases:
 ## Environment Setup
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-name>
+git clone https://github.com/alizoljodi/Detection_of_Climate_Misinformation_Claims.git
+cd Detection_of_Climate_Misinformation_Claims
 pip install -r requirements.txt
 ```
 
