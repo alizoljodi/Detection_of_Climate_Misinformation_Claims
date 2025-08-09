@@ -127,5 +127,11 @@ accuracy for clear model-to-model comparison.
 ---
 
 ## References
-- Coan, T. G., Boussalis, C., & Cook, J. (2021). *Computer-assisted classification of contrarian claims about climate change*. *Scientific Reports, 11*(1), 1–12. [Link](https://www.nature.com/articles/s41598-021-01714-4)
+- Coan, T. G., Boussalis, C., & Cook, J. (2021). *Computer-assisted classification of contrarian claims about climate change*. *Scientific Reports, 11*(1), 1–12. [Link](https://www.nature.com/articles/s41598-021-01714-4)  
+- [ClimateEval Dataset](https://huggingface.co/datasets/murathankurfali/ClimateEval/tree/main/exeter/sub_claim)  
+- Team Google DeepMind & Google Research. (2024). *Gemma: Open models based on Gemini research and technology*. [Hugging Face model card](https://huggingface.co/google/gemma-2b)  
+- Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., ... & Riedel, S. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*. *Advances in Neural Information Processing Systems (NeurIPS)*. [arXiv:2005.11401](https://arxiv.org/abs/2005.11401)  
+- Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le, Q., & Zhou, D. (2022). *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. *Advances in Neural Information Processing Systems (NeurIPS)*. [arXiv:2201.11903](https://arxiv.org/abs/2201.11903)  
+- Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., ... & Zhou, D. (2022). *Self-Consistency Improves Chain of Thought Reasoning in Language Models*. [arXiv:2203.11171](https://arxiv.org/abs/2203.11171)  
+(https://www.nature.com/articles/s41598-021-01714-4)
 - [ClimateEval Dataset](https://huggingface.co/datasets/murathankurfali/ClimateEval/tree/main/exeter/sub_claim)
