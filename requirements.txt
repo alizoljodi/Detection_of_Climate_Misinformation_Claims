@@ -1,0 +1,10 @@
+transformers>=4.54.1
+datasets
+torch
+scikit-learn
+pandas
+numpy
+faiss-cpu
+accelerate
+peft
+sentencepiece
