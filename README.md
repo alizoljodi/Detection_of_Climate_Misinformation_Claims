@@ -44,8 +44,13 @@ The project is implemented in four phases:
    - This imbalance may bias models toward predicting the dominant class.
 
 <figure align="center">
-  <img src="Figures/label_destribution.png" alt="Label distribution" width="600"/>
+  <img src="Figures/label_destribution.png" alt="Label distribution" width="1000"/>
   <figcaption><em>Figure 1:</em>The histograms of the three sets suggest that they share a similar overall data distribution, indicating that validation and test set performance should reliably reflect the model’s performance on the training data. However, the sets are imbalanced with respect to label distribution, with the majority of labels belonging to the 'No claim' category, which may affect the fairness and generalization of the models.</figcaption>
+</figure>
+
+<figure align="center">
+  <img src="Figures/word_count.png" alt="Label distribution" width="1000"/>
+  <figcaption><em>Figure 2:</em>The text lengths differ across the datasets, which may affect the performance of models that are sensitive to input size, such as RNNs.</figcaption>
 </figure>
 
 
