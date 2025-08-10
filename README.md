@@ -21,6 +21,8 @@ The project is implemented in four phases:
 
 1. **Data Integrity**  
    - Minimal redundancy: no overlaps between train and validation sets; only one duplicate in the test set.
+  
+
 | Split       | Metric    | text   | sub_claim_code | sub_claim |
 |-------------|-----------|--------|----------------|-----------|
 | **Train**   | Count     | 23,436 | 23,436         | 23,436    |
