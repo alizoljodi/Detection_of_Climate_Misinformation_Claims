@@ -111,6 +111,9 @@ git clone https://github.com/alizoljodi/Detection_of_Climate_Misinformation_Clai
 cd Detection_of_Climate_Misinformation_Claims
 pip install -r requirements.txt
 ```
+---
+
+Download the Dataset and Place it Next to the Notebook
 
 ---
 
