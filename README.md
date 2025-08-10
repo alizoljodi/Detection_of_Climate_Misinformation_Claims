@@ -44,7 +44,7 @@ The project is implemented in four phases:
    - This imbalance may bias models toward predicting the dominant class.
 
 <p align="center">
-  <img src="Figures/label_destribution.png" alt="Label distribution" width="600"/>
+  <img src="Figures/label_destribution.png" alt="Label distribution" width="1000"/>
 </p>
 
 
