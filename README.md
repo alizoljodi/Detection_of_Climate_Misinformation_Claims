@@ -48,16 +48,18 @@ The project is implemented in four phases:
   <figcaption><em>Figure 1:</em>The histograms of the three sets suggest that they share a similar overall data distribution, indicating that validation and test set performance should reliably reflect the model’s performance on the training data. However, the sets are imbalanced with respect to label distribution, with the majority of labels belonging to the 'No claim' category, which may affect the fairness and generalization of the models.</figcaption>
 </figure>
 
-<figure align="center">
-  <img src="Figures/word_count.png" alt="Label distribution" width="1000"/>
-  <figcaption><em>Figure 2:</em>The text lengths differ across the datasets, which may affect the performance of models that are sensitive to input size, such as RNNs.</figcaption>
-</figure>
+
 
 
 
 3. **Feature Characteristics**  
    - Text lengths vary significantly between samples, which may affect sequence models like LSTMs but less so large language models (LLMs).
    - Word count distribution shows a similar pattern to text length, confirming varied verbosity across examples.
+  
+<figure align="center">
+  <img src="Figures/word_count.png" alt="Word count distribution" width="1000"/>
+  <figcaption><em>Figure 2:</em>The text lengths differ across the datasets, which may affect the performance of models that are sensitive to input size, such as RNNs.</figcaption>
+</figure>
 
 4. **Implications for Modeling**  
    - Class imbalance requires careful consideration in evaluation.
