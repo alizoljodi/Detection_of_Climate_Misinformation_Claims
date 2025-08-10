@@ -4,10 +4,10 @@
 This project tackles the task of classifying climate-related claims into fine-grained sub-claim categories, following the taxonomy from Coan et al. (2021). Using the sub-claim configuration of the [murathankurfali/ClimateEval](https://huggingface.co/datasets/murathankurfali/ClimateEval/tree/main/exeter/sub_claim) dataset, we evaluate a spectrum of approaches in three phases: (1) zero-shot prompting, (2) few-shot prompting with limited in-context examples, and (3) advanced methods including PEFT QLoRA, Retrieval-Augmented Generation (RAG), and a TF-IDF + Fully Connected Neural Network (FNN) baseline. Due to resource constraints, few-shot prompting was restricted to a small set of representative examples, and fine-tuning was performed on a random subset of 1,000 training samples. Results show that naive prompting yields near-random performance, while PEFT QLoRA and RAG achieve substantial gains (≈72–74% accuracy). The conventional TF-IDF + FNN approach outperforms all LLM-based methods with 79% accuracy, highlighting the effectiveness of sparse lexical features in this domain. These findings suggest that for narrow, domain-specific classification tasks, traditional methods can surpass small language models unless they are domain-adapted or paired with strong retrieval pipelines.
 
 The project is implemented in four phases:
-1. **Phase 0 - Exploratory Data Analysis**: Performing an overall dataset analysis to examine data types, distributions, and the most important features.
-1. **Phase 1 – Zero-Shot Prompting**: Establishing a baseline using direct prompts with no examples.
-2. **Phase 2 – Few-Shot Prompting**: Improving performance by adding in-context examples.
-3. **Phase 3 – Advanced Methods**: Exploring multiple approaches including PEFT with QLoRA, Retrieval-Augmented Generation (RAG), and TF-IDF + Fully Connected Neural Networks (FNN).
+- **Phase 0 - Exploratory Data Analysis**: Performing an overall dataset analysis to examine data types, distributions, and the most important features.
+- **Phase 1 – Zero-Shot Prompting**: Establishing a baseline using direct prompts with no examples.
+- **Phase 2 – Few-Shot Prompting**: Improving performance by adding in-context examples.
+- **Phase 3 – Advanced Methods**: Exploring multiple approaches including PEFT with QLoRA, Retrieval-Augmented Generation (RAG), and TF-IDF + Fully Connected Neural Networks (FNN).
 
 ---
 
