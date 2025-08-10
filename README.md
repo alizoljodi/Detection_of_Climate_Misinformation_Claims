@@ -43,9 +43,11 @@ The project is implemented in four phases:
    - Labels are highly imbalanced. The majority of examples belong to "No claim," which makes up ~⅔ of all data points.
    - This imbalance may bias models toward predicting the dominant class.
 
-<p align="center">
-  <img src="Figures/label_destribution.png" alt="Label distribution" width="1000"/>
-</p>
+<figure align="center">
+  <img src="Figures/label_destribution.png" alt="Label distribution" width="600"/>
+  <figcaption><em>Figure 1:</em>The histograms of the three sets suggest that they share a similar overall data distribution, indicating that validation and test set performance should reliably reflect the model’s performance on the training data. However, the sets are imbalanced with respect to label distribution, with the majority of labels belonging to the 'No claim' category, which may affect the fairness and generalization of the models.</figcaption>
+</figure>
+
 
 
 3. **Feature Characteristics**  
