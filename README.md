@@ -113,6 +113,11 @@ pip install -r requirements.txt
 ```
 ---
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/gist/alizoljodi/3d4e3d49987f327a494ec5a3da3b80d6/detection_of_climate_misinformation_claims.ipynb)
+
+---
+
+
 Download the Dataset and Place it Next to the Notebook
 
 ---
