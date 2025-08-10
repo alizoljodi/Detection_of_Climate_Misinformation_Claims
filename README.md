@@ -61,9 +61,19 @@ The project is implemented in four phases:
   <figcaption><em>Figure 2:</em>The text lengths differ across the datasets, which may affect the performance of models that are sensitive to input size, such as RNNs.</figcaption>
 </figure>
 
+
+
 4. **Implications for Modeling**  
    - Class imbalance requires careful consideration in evaluation.
-   - Simple surface-level text features (e.g., TF-IDF) may already capture discriminative patterns given the specialized domain.
+  
+5. **Repetitive words in all sets**
+
+<figure align="center">
+  <img src="Figures/wordcloud.png" alt="wordcloud.png" width="1000"/>
+  <figcaption><em>Figure 3:</em>*The* wordcloud suggests that the most repetive words are global, climate, change, year, and warming.</figcaption>
+</figure>
+
+
 
 ---
 ## Environment Setup
