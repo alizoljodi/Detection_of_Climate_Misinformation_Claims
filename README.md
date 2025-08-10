@@ -43,6 +43,11 @@ The project is implemented in four phases:
    - Labels are highly imbalanced. The majority of examples belong to "No claim," which makes up ~⅔ of all data points.
    - This imbalance may bias models toward predicting the dominant class.
 
+<p align="center">
+  <img src="images/label_distribution.png" alt="Label distribution" width="600"/>
+</p>
+
+
 3. **Feature Characteristics**  
    - Text lengths vary significantly between samples, which may affect sequence models like LSTMs but less so large language models (LLMs).
    - Word count distribution shows a similar pattern to text length, confirming varied verbosity across examples.
