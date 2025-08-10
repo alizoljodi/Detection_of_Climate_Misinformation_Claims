@@ -21,6 +21,21 @@ The project is implemented in four phases:
 
 1. **Data Integrity**  
    - Minimal redundancy: no overlaps between train and validation sets; only one duplicate in the test set.
+| Split       | Metric    | text   | sub_claim_code | sub_claim |
+|-------------|-----------|--------|----------------|-----------|
+| **Train**   | Count     | 23,436 | 23,436         | 23,436    |
+| **Test**    | Count     | 2,898  | 2,904          | 2,904     |
+| **Validation** | Count | 2,605  | 2,605          | 2,605     |
+| **Train**   | Unique    | 23,436 | 18             | 18        |
+| **Test**    | Unique    | 2,897  | 18             | 18        |
+| **Validation** | Unique| 2,605  | 18             | 18        |
+| **Train**   | Top       | Truth n 16 The trace gases absorb the radiatio... | 0_0 | No claim |
+| **Test**    | Top       | Reality may be a bit simpler, or much more com... | 0_0 | No claim |
+| **Validation** | Top    | The linear trends in the graphs are as calcula... | 0_0 | No claim |
+| **Train**   | Freq      | 1      | 16,302         | 16,302    |
+| **Test**    | Freq      | 2      | 1,754          | 1,754     |
+| **Validation** | Freq  | 1      | 1,812          | 1,812     |
+
    
 2. **Label Distribution**  
    - Labels are highly imbalanced. The majority of examples belong to "No claim," which makes up ~⅔ of all data points.
