@@ -17,6 +17,34 @@ The project is implemented in four phases:
 - **Splits**: Train, validation, and test (test used strictly for final evaluation).
 
 ---
+## Metrics
+
+For this project, **accuracy** is used as the main comparison metric.  
+The reason for this choice is its **simplicity** and ease of interpretation.  
+Since this is a **multi-class classification** task, accuracy provides a straightforward  
+yet effective way to compare models based on their overall detection performance.  
+It also offers a quick summary of how well the model performs across all categories,  
+making it useful for initial benchmarking before diving into more detailed metrics.
+
+**Accuracy**  
+Accuracy = Correct Predictions / Total Predictions
+
+**Precision**  
+Precision = True Positives / (True Positives + False Positives)
+
+**Recall**  
+Recall = True Positives / (True Positives + False Negatives)
+
+**F1-Score**  
+F1 = 2 × (Precision × Recall) / (Precision + Recall)
+
+While precision, recall, and F1-score are also reported to capture the nuances of  
+per-class performance and class imbalance effects, the primary focus remains on  
+accuracy for clear model-to-model comparison.
+
+
+---
+
 ## Exploratory Data Analysis
 
 1. **Data Integrity**  
@@ -138,52 +166,28 @@ You can run each phase independently:
 
 ## Analysis and Reflections
 
-The results show a clear gap between naive prompting and methods adapted to the task:
+The results demonstrate a substantial gap between naive prompting and methods adapted to the task. Zero-shot prompting performed poorly due to the model’s lack of task-specific knowledge and limited size, while few-shot prompting achieved only marginal gains before plateauing, suggesting that the bottleneck lay in reasoning ability rather than exposure to additional examples. PEFT QLoRA produced a significant jump in performance, confirming that even partial fine-tuning can equip a small model with useful domain knowledge. Retrieval-Augmented Generation (RAG) slightly outperformed fine-tuning, showing the potential of retrieval-based augmentation in specialized tasks. However, the advantage of RAG over fine-tuning may diminish if the latter is trained on the full dataset rather than the restricted subset of 1,000 examples used here. TF-IDF with a fully connected neural network achieved the highest accuracy at 79%, illustrating that conventional methods can outperform small LLMs in narrow, domain-specific classification tasks by leveraging sparse, discriminative features without the need for deep semantic reasoning.
 
-- **Zero-shot**: Poor performance due to the model's lack of task-specific knowledge and small size.
-- **Few-shot**: Slight improvement from in-context learning, but still far from useful.
-- **PEFT QLoRA**: Significant jump in performance, confirming that even partial fine-tuning can give the model useful domain knowledge.
-- **RAG**: Outperformed fine-tuning slightly, showing the potential of retrieval-based augmentation in specialized tasks.
-- **TF-IDF + FNN**: The top performer with 79% accuracy, demonstrating that conventional methods can outperform small LLMs in narrow, domain-specific classification tasks.
+From a practical perspective, TF-IDF + FNN offers near-instant inference and minimal computational overhead, making it well-suited for small- to medium-scale deployments. However, its scalability is limited, as the sparse feature matrix and model parameters require retraining when significant changes occur in the dataset. In contrast, RAG is inherently more scalable for dynamic and evolving knowledge bases, as it can integrate new data directly into the retrieval index without retraining the underlying model, enabling rapid adaptation to emerging misinformation patterns. While both approaches have merits, these scalability differences make RAG more appropriate for long-term deployment in fast-changing domains, despite its higher computational cost during inference.
 
-**Why TF-IDF + FNN succeeded**:  
-- The task benefits from sparse, discriminative features.
-- No need for deep semantic reasoning; surface-level patterns captured by TF-IDF suffice.
-- Fully connected networks effectively learned non-linear decision boundaries from these features.
+Limitations of this work include the risk of domain drift, given that the dataset contains historical claims whose language and framing may not generalize to future misinformation narratives, and the amplification of bias caused by the heavy class imbalance toward the “No claim” category, which may lead to systematic under-detection of rarer sub-claims. Addressing these issues could involve hybrid modeling approaches that combine TF-IDF features with transformer embeddings, curriculum-based fine-tuning that gradually introduces the full taxonomy, and data augmentation strategies such as paraphrasing or back-translation to increase the representation of minority classes.
+
+It should also be noted that the experiments were conducted on a limited amount of data due to resource constraints. Consequently, conducting new experiments with access to the full dataset and greater training capacity may influence the absolute performance of the models as well as their relative rankings, potentially altering the conclusions drawn from this comparison.
 
 **Next Steps**:
 - Use domain-adapted LLMs pre-trained on climate change discussions.
 - Explore more advanced retrieval pipelines.
 
----
+## Key Takeaways
 
-## Metrics
+Our experiments show that naive prompting is ineffective for fine-grained climate misinformation classification, while fine-tuning (**PEFT QLoRA**) and retrieval-based methods (**RAG**) achieve strong improvements. A simple **TF-IDF + FNN** baseline outperformed all LLM-based approaches, highlighting the power of sparse lexical features in narrow domains. **RAG** is more scalable for dynamic datasets, whereas **TF-IDF + FNN** offers low-cost, fast inference but limited adaptability. Due to resource constraints, all experiments were run on reduced training data, meaning results may shift if full datasets and larger training capacity are used.
 
-For this project, **accuracy** is used as the main comparison metric.  
-The reason for this choice is its **simplicity** and ease of interpretation.  
-Since this is a **multi-class classification** task, accuracy provides a straightforward  
-yet effective way to compare models based on their overall detection performance.  
-It also offers a quick summary of how well the model performs across all categories,  
-making it useful for initial benchmarking before diving into more detailed metrics.
 
-**Accuracy**  
-Accuracy = Correct Predictions / Total Predictions
-
-**Precision**  
-Precision = True Positives / (True Positives + False Positives)
-
-**Recall**  
-Recall = True Positives / (True Positives + False Negatives)
-
-**F1-Score**  
-F1 = 2 × (Precision × Recall) / (Precision + Recall)
-
-While precision, recall, and F1-score are also reported to capture the nuances of  
-per-class performance and class imbalance effects, the primary focus remains on  
-accuracy for clear model-to-model comparison.
 
 
 ---
+
+
 
 ## References
 - Coan, T. G., Boussalis, C., & Cook, J. (2021). *Computer-assisted classification of contrarian claims about climate change*. *Scientific Reports, 11*(1), 1–12. [Link](https://www.nature.com/articles/s41598-021-01714-4)  
