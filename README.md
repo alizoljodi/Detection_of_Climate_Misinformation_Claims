@@ -70,7 +70,7 @@ The project is implemented in four phases:
 
 <figure align="center">
   <img src="Figures/wordcloud.png" alt="wordcloud.png" width="1000"/>
-  <figcaption><em>Figure 3:</em>*The* wordcloud suggests that the most repetive words are global, climate, change, year, and warming.</figcaption>
+  <figcaption><em>Figure 3:</em>The wordcloud suggests that the most repetitive words are global, climate, change, year, and warming.</figcaption>
 </figure>
 
 
